@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Manajemen Siswa</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 900px;
+        }
+        .table-responsive {
+            max-height: 60vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="h3">Manajemen Data Siswa</h1>
+            <a href="/" class="btn btn-secondary">Kembali ke Halaman Utama</a>
+        </div>
+
+        <!-- Form Tambah/Edit Siswa -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="card-title mb-0" id="form-title">Tambah Siswa Baru</h5>
+            </div>
+            <div class="card-body">
+                <form id="form-siswa">
+                    <input type="hidden" id="nis-lama">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="nis" class="form-label">NIS</label>
+                            <input type="text" class="form-control" id="nis" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="nama" class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="nama" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="kelas" class="form-label">Kelas</label>
+                            <input type="text" class="form-control" id="kelas" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="tempat_pkl" class="form-label">Tempat PKL</label>
+                            <input type="text" class="form-control" id="tempat_pkl" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="button" class="btn btn-outline-secondary d-none" id="btn-batal">Batal</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Tabel Data Siswa -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Daftar Siswa</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>NIS</th>
+                                <th>Nama</th>
+                                <th>Kelas</th>
+                                <th>Tempat PKL</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabel-siswa-body">
+                            <!-- Data siswa akan dimuat di sini -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="loading" class="text-center d-none">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

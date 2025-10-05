@@ -1,0 +1,20 @@
+[
+    {
+        "nis": "12345",
+        "nama": "Budi Santoso",
+        "kelas": "XII TKJ 1",
+        "tempat_pkl": "PT. Maju Jaya"
+    },
+    {
+        "nis": "67890",
+        "nama": "Ani Lestari",
+        "kelas": "XII RPL 2",
+        "tempat_pkl": "Dinas Kominfo"
+    },
+    {
+        "nis": "11223",
+        "nama": "Citra Dewi",
+        "kelas": "XII MM 1",
+        "tempat_pkl": "Studio Kreatif"
+    }
+]

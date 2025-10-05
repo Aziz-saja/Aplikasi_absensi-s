@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Absensi Siswa PKL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Absensi PKL</a>
+        </div>
+    </nav>
+
+    <div class="container main-container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-11">
+                <div class="card content-card">
+                    <div class="card-body">
+                        <!-- Pilihan Aksi Awal -->
+                        <div id="action-choice" class="text-center">
+                            <h2 class="card-title mb-4">Silakan Pilih Aksi</h2>
+                            <div class="d-grid gap-3 col-10 mx-auto">
+                                <button id="show-masuk-form-btn" class="btn btn-primary btn-lg">Absen Masuk</button>
+                                <button id="show-pulang-form-btn" class="btn btn-success btn-lg">Absen Pulang</button>
+                            </div>
+                        </div>
+
+                        <!-- Form Absen Masuk (tersembunyi) -->
+                        <div id="masuk-form-container" style="display: none;">
+                            <h2 class="card-title text-center mb-4">Formulir Absensi Masuk</h2>
+                            <form id="attendance-form">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="nis-masuk" name="nis" placeholder="Masukkan NIS" required>
+                                    <label for="nis-masuk">NIS (Nomor Induk Siswa)</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="status_kehadiran" name="status_kehadiran" required>
+                                        <option value="" disabled selected>Pilih Status Kehadiran</option>
+                                        <option value="Hadir">Hadir</option>
+                                        <option value="Sakit">Sakit</option>
+                                        <option value="Izin">Izin</option>
+                                    </select>
+                                    <label for="status_kehadiran">Status Kehadiran</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control" placeholder="Tinggalkan keterangan di sini" id="keterangan" name="keterangan" style="height: 100px"></textarea>
+                                    <label for="keterangan">Keterangan (jika Sakit/Izin)</label>
+                                </div>
+                                <div class="d-grid gap-2 mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg">Kirim Absensi</button>
+                                    <button type="button" class="btn btn-secondary back-btn">Kembali</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Form Absen Pulang (tersembunyi) -->
+                        <div id="pulang-form-container" style="display: none;">
+                            <h2 class="card-title text-center mb-4">Formulir Absensi Pulang</h2>
+                            <form id="pulang-form">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="nis-pulang" name="nis" placeholder="Masukkan NIS" required>
+                                    <label for="nis-pulang">NIS (Nomor Induk Siswa)</label>
+                                </div>
+                                <div class="d-grid gap-2 mt-4">
+                                    <button type="submit" class="btn btn-success btn-lg">Kirim Absen Pulang</button>
+                                    <button type="button" class="btn btn-secondary back-btn">Kembali</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <hr class="my-4">
+                        <div class="text-center">
+                            <a href="riwayat.html" class="btn btn-outline-secondary">Lihat Riwayat Absensi</a>
+                            <a href="admin.html" class="btn btn-info mt-2">Halaman Admin</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
